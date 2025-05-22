@@ -48,7 +48,6 @@
     font-family: 'Michroma', sans-serif;
     @include fluid-type(3rem, 6rem);
     font-weight: 600;
-    letter-spacing: 6px;
     line-height: 150%;
     perspective: 400px;
     text-align: justify;
@@ -57,14 +56,15 @@
       position: relative;
       top: 100vh;
       transform-origin: 50% 100%;
-      animation: crawl 80s linear 5s;
+      animation: crawl 10s linear 5s;
+      --crawl-dist: 3000px;
 
       @keyframes crawl {
-        0% {
+        from {
           transform: rotateX(25deg)  translateZ(-250px) translateY(10vh);
         }
-        100% {
-          transform: rotateX(25deg) translateZ(-250px) translateY(-1400%);
+        to {
+          transform: rotateX(25deg) translateZ(-250px) translateY(-2500%);
         }
       }
     }
