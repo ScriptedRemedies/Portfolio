@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,300&family=Michroma&display=swap');
 
 // * VARIABLES *
 
@@ -46,16 +46,6 @@ body {
   background-color: $cream;
 }
 
-// Setting the hover animation for all star wars quotes
-.starWars_quote {
-  width: fit-content;
-
-  &:hover {
-    color: $blue !important;
-    cursor: pointer;
-  }
-}
-
 // Turning text responsive
 @mixin fluid-type($min-size, $max-size, $min-vw: 320px, $max-vw: 1200px) {
   font-size: $min-size;
@@ -71,4 +61,27 @@ body {
   @media (min-width: $max-vw) {
     font-size: $max-size;
   }
+}
+
+// Setting the hover animation for all star wars quotes
+.starWars_quote {
+  width: fit-content;
+
+  &:hover {
+    color: $blue !important;
+    cursor: pointer;
+  }
+}
+
+// All section headers has the same spacing
+h2 {
+  margin: 0;
+  font-weight: 300;
+  padding: 20px 0 0 80px;
+  @include fluid-type(1.75rem, 2.5rem);
+}
+
+// All blue highlighted text
+.blue-text {
+  color: $blue;
 }

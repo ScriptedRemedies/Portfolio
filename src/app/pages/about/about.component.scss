@@ -1,5 +1,72 @@
+@import "../../../styles.scss";
+
 .container {
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: url("/assets/images/starBackground.png") no-repeat center center fixed;
+
+  h2 {
+    color: $faded-black;
+    flex: 0 0 auto;
+    margin: 1rem 0;
+  }
+
+  .intro {
+    font-family: 'Michroma', sans-serif;
+    font-weight: 600;
+    @include fluid-type(1rem, 2rem);
+    letter-spacing: 6px;
+    text-align: center;
+    color: $blue;
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fade-out 2s linear 2s forwards;
+
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        display: none;
+      }
+    }
+  }
+
+  .star-wars {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: #feda4a;
+    font-family: 'Michroma', sans-serif;
+    @include fluid-type(3rem, 6rem);
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 150%;
+    perspective: 400px;
+    text-align: justify;
+
+    .crawl {
+      position: relative;
+      top: 100vh;
+      transform-origin: 50% 100%;
+      animation: crawl 80s linear 5s;
+
+      @keyframes crawl {
+        0% {
+          transform: rotateX(25deg)  translateZ(-250px) translateY(10vh);
+        }
+        100% {
+          transform: rotateX(25deg) translateZ(-250px) translateY(-1400%);
+        }
+      }
+    }
+  }
 }

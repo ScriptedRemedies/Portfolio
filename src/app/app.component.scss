@@ -3,6 +3,7 @@
 .container {
   display: flex;
 
+  // TODO: Learn more about the blend mode for the icons to change color on background
   nav {
     display: flex;
     justify-content: space-between;
@@ -35,8 +36,9 @@
         display: block;
         border-style: solid;
         border-width: 3px;
-        color: $black;
         margin: 15px 0;
+        background: $black;
+        color: $black;
       }
 
       .leftSide-links {
