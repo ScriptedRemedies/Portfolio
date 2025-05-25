@@ -1,0 +1,131 @@
+@import "../../../styles.scss";
+
+.container {
+  background: url("/assets/images/starBackground.png") no-repeat center center fixed;
+  color: $cream;
+
+  h2 {
+    color: $faded-black;
+    flex: 0 0 auto;
+    margin: 1rem 0;
+    width: fit-content;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+  }
+
+  .slide {
+    width: 50%;
+    margin: auto;
+    padding-bottom: 90px;
+
+    .title {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      @include fluid-type(1.5rem,2.5rem);
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6em;
+        height: 0.25em;
+      }
+
+      &::before {
+        left: -5em;
+        border-radius: 20px 0 0 20px;
+      }
+      &::after {
+        right: -5em;
+        border-radius: 0 20px 20px 0;
+      }
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(20px, 80vw, 80px);
+
+      img {
+        height: 100%;
+        width: auto;
+        filter:
+          drop-shadow(4px 4px 2px rgba(255, 255, 255, 0.8))
+          drop-shadow(0 6px 12px rgba(255, 255, 255, 0.15));
+      }
+    }
+  }
+  .strong-slide {
+    .title {
+      &::before,
+      &::after {
+        background: $green-saber;
+        box-shadow:
+          0 0 2px rgba(255, 255, 255, 0.9),
+          0 0 4px rgba($green, 0.8),
+          0 0 8px rgba($green, 0.8),
+          0 0 16px rgba($green, 0.4);
+      }
+    }
+  }
+  .good-slide {
+    .title {
+      &::before,
+      &::after {
+        background: $blue-saber;
+        box-shadow:
+          0 0 2px rgba(255, 255, 255, 0.9),
+          0 0 4px rgba($blue, 0.8),
+          0 0 8px rgba($blue, 0.8),
+          0 0 16px rgba($blue, 0.4);
+      }
+    }
+  }
+  .getting-there-slide {
+    .title {
+      &::before,
+      &::after {
+        background: $yellow-saber;
+        box-shadow:
+          0 0 2px rgba(255, 255, 255, 0.9),
+          0 0 4px rgba($yellow, 0.8),
+          0 0 8px rgba($yellow, 0.8),
+          0 0 16px rgba($yellow, 0.4);
+      }
+    }
+  }
+  .planning-slide {
+    .title {
+      &::before,
+      &::after {
+        background: $red-saber;
+        box-shadow:
+          0 0 2px rgba(255, 255, 255, 0.9),
+          0 0 4px rgba($red, 0.8),
+          0 0 8px rgba($red, 0.8),
+          0 0 16px rgba($red, 0.4);
+      }
+    }
+  }
+}
+
