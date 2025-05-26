@@ -1,1 +1,39 @@
-<p>contact works!</p>
+<div class="container">
+  <h2 class="title">Contact Me</h2>
+  <div class="contact">
+    <div class="desc">
+      <p><span class="starWars_quote">You’ll find I’m full of surprises</span>.<br>
+        Ready for collaboration, feedback, or a friendly chat? Send me a note, I’d love to hear from you.</p>
+    </div>
+    <div class="links">
+      <a href="https://github.com/ScriptedRemedies?tab=repositories"><div class="icon github-icon"></div></a>
+      <div class="line"></div>
+      <a href="https://www.linkedin.com/in/busheysam/"><div class="icon linkedin-icon"></div></a>
+    </div>
+    <div class="contact-form">
+        <h2 class="form-title">Reach Out</h2>
+        <form #form="ngForm">
+          <label>
+            Name
+            <input type="text" class="input" name="name" ngModel required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" ngModel required />
+          </label>
+          <label>
+            Subject
+            <input type="text" name="subject" ngModel required />
+          </label>
+          <label>
+            Message
+            <textarea rows="5" name="message" ngModel required></textarea>
+          </label>
+          <button type="submit" class="lightsaber-btn" [disabled]="!form.valid" [ngClass]="{ 'enabled': form.valid }">
+            <img src="/assets/images/lightsaber.png" alt="">
+            <div class="blade" [class.on]="form.valid"><p>Send</p></div>
+          </button>
+        </form>
+    </div>
+  </div>
+</div>
