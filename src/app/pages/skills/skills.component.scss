@@ -2,6 +2,8 @@
 
 .container {
   background: url("/assets/images/starBackground.png") no-repeat center center fixed;
+  position: relative;
+  top: -20px;
   color: $cream;
 
   h2 {
