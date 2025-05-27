@@ -3,66 +3,8 @@
 .container {
   display: flex;
 
-  // TODO: Learn more about the blend mode for the icons to change color on background
   nav {
-    display: flex;
-    justify-content: space-between;
-    z-index: 1000;
 
-    .fa-house {
-      font-size: 30px;
-    }
-
-    i {
-      font-size: 25px;
-      color: $faded-black;
-
-      &:hover {
-        color: $red;
-        cursor: pointer;
-      }
-    }
-
-    .leftSide {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: column;
-      height: 95vh;
-      position: fixed;
-      top: 10px; left: 10px;
-
-      hr {
-        flex: 1;
-        display: block;
-        border-style: solid;
-        border-width: 3px;
-        margin: 15px 0;
-        background: $faded-black;
-        color: $faded-black;
-      }
-
-      .leftSide-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-    }
-  }
-
-  .fa-jedi {
-    font-size: 30px;
-    padding: 10px;
-    position: fixed;
-    top: 0; right: 0;
-    color: $faded-black;
-    z-index: 1000;
-
-    &:hover {
-      color: $blue;
-      cursor: pointer;
-    }
   }
 
   .components {
