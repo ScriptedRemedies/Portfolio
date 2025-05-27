@@ -13,6 +13,11 @@
     margin: 1rem 0;
   }
 
+  .crawlWrapper {
+    position: relative;
+    top: -100px;
+  }
+
   .intro {
     font-family: 'Michroma', sans-serif;
     font-weight: 600;
@@ -20,7 +25,7 @@
     letter-spacing: 6px;
     text-align: center;
     color: $blue;
-    margin-top: 30vh;
+    margin-top: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,19 +59,45 @@
 
     .crawl {
       position: relative;
-      top: 100vh;
+      top: 150vh;
       transform-origin: 50% 100%;
-      animation: crawl 100s linear 5s;
-      --crawl-dist: 3000px;
+      animation: crawl 80s linear 5s;
 
       @keyframes crawl {
         from {
-          transform: rotateX(25deg)  translateZ(-250px) translateY(10vh);
+          transform: rotateX(25deg)  translateZ(-250px) translateY(0);
         }
         to {
-          transform: rotateX(25deg) translateZ(-250px) translateY(-2500%);
+          transform: rotateX(25deg) translateZ(-250px) translateY(-2000%);
         }
       }
+    }
+  }
+
+  button {
+    background: $yellow;
+    border: none;
+    border-radius: 20px;
+    @include fluid-type(1rem, 2rem);
+    width: fit-content;
+    padding: 5px 30px;
+    margin: auto;
+    transform: translateY(-45vh);
+    font-family: 'Michroma', sans-serif;
+    opacity: 0;
+    transition: 0.5s;
+    animation: fade-in 1s ease-in-out forwards;
+    color: $blue;
+
+    &:hover {
+      cursor: pointer;
+      background: $blue;
+      color: $yellow;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
   }
 }
