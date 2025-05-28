@@ -25,9 +25,8 @@
       border-radius: 20px;
       padding: 20px;
       color: $cream;
-      filter:
-        drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.4))
-        drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+      box-shadow: (8px 8px 4px rgba(0, 0, 0, 0.4)),
+                  (0 6px 12px rgba(0, 0, 0, 0.15));
 
       .card-title {
         margin-bottom: 0;
