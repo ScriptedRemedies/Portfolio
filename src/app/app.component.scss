@@ -4,7 +4,17 @@
   display: flex;
 
   nav {
+    position: fixed;
+    top: 0; left: 0;
+    display: flex;
+    z-index: 1000;
 
+    .fa-jedi {
+      &:hover {
+        color: $blue;
+        cursor: pointer;
+      }
+    }
   }
 
   .components {

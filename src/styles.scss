@@ -30,15 +30,6 @@ $green: #15EC5B;
 // Inside of green saber
 $green-saber: #EBFFEE;
 
-// SHADOWS
-// Pictures in timeline
-
-// Lightsabers
-
-// Skills icons
-
-// Project cards
-
 // Getting rid of all margins to make background images flushed with page, set all font to Inter, set entire background to cream
 body {
   margin: 0;
@@ -77,7 +68,8 @@ body {
 h2 {
   margin: 0;
   font-weight: 300;
-  padding: 20px 0 0 80px;
+  padding: 5px 0 0 80px;
+  width: fit-content;
   @include fluid-type(1.75rem, 2.5rem);
 }
 

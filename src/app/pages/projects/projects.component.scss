@@ -1,8 +1,10 @@
 @import "../../../styles.scss";
 
 .container {
+  position: relative;
+  top: -20px;
 
-  .title {
+  h2 {
     color: $faded-white;
   }
 
