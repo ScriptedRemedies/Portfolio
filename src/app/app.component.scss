@@ -1,2 +1,69 @@
-@import "../styles.scss";
+@import '../styles.scss';
 
+.crt-screen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  transition: background-color 1s ease-in-out;
+
+  .crt-text {
+    position: relative;
+    padding-left: $padding;
+    color: rgb(93, 253, 0);
+    font-family: $terminal;
+    @include fluid-type(1.5rem, 2rem);
+    width: 50%;
+    text-shadow: 1px 1px 2px rgb(150, 167, 124), 0 0 1em rgb(150, 167, 124), 0 0 0.2em rgb(150, 167, 124);
+    z-index: 3;
+  }
+}
+
+.ti-cursor {
+  color: rgb(93, 253, 0) !important;
+}
+
+// The two images
+.bezel {
+  z-index: 2;
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+.scanlines {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Turn off animation */
+@keyframes tvOff {
+  0%   { transform: scaleY(1); opacity: 1; }
+  60%  { transform: scaleY(0.1); opacity: 0.8; }
+  100% { transform: scaleY(0); opacity: 0; }
+}
+/* Turn on animation */
+@keyframes tvOn {
+  0%   { transform: scaleY(0); opacity: 0; }
+  40%  { transform: scaleY(0.1); opacity: 0.8; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+// This class only gets applied after the typeIt function is done
+.crt-screen.power-off {
+  animation: tvOff 1s forwards ease-in-out;
+}
+.components {
+  transform: scaleY(0);
+  opacity: 0;
+  transform-origin: center;
+  // This animation only needs a 1s delay to match the duration of the turn off animation
+  animation: tvOn 0.6s ease-in-out 1s forwards;
+}

@@ -1,15 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,300&family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 // * VARIABLES *
 
 // COLORS
 
+// SPACING
+$padding: 100px;
+
+// FONTS & TEXT
+// PC Terminal
+$terminal: 'VT323', monospace;
 
 // Getting rid of all margins to make background images flushed with page, set all font to Inter, set entire background to cream
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background-color: $cream;
+  background-color: #111;
 }
 
 // Turning text responsive
@@ -27,4 +33,13 @@ body {
   @media (min-width: $max-vw) {
     font-size: $max-size;
   }
+}
+
+// Variable for text headings
+@mixin text-heading {
+  @include fluid-type(2rem, 3.5rem);
+}
+
+@mixin text-body {
+  @include fluid-type(1rem, 1.5rem);
 }
