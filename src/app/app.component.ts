@@ -18,8 +18,8 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('intro', { static: false }) intro!: ElementRef<HTMLElement>;
   @ViewChild('crtScreen', { static: false }) crtScreen!: ElementRef<HTMLDivElement>;
 
-  // Return "showOverlay" to true when want animation to show
-  showOverlay = false;
+  // TODO: Return "showOverlay" to true when want animation to show
+  showOverlay = true;
   isOff = false;
 
   async ngAfterViewInit() {
