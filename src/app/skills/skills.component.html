@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="img-border">
+    <img src="./assets/images/me.png" alt="Me" class="fade-mask">
+
+    <!-- overlay SVG: text on a circular path -->
+    <svg class="text-circle" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- circle of radius 90 at center (100,100) -->
+        <path
+          id="circlePath"
+          d="M100,100
+             m0,-90
+             a90,90 0 1,1 0,180
+             a90,90 0 1,1 0,-180"
+        />
+      </defs>
+      <text>
+        <textPath href="#circlePath" startOffset="0%">
+          HTML • Angular • CSS • SCSS • Java • JavaScript • TypeScript • Python • PHP • MySQL • Git •
+        </textPath>
+      </text>
+    </svg>
+  </div>
+</div>
