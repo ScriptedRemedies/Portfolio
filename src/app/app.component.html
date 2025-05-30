@@ -1,15 +1,15 @@
 <div class="container">
-  <img src="./assets/images/bezel.png" alt="Bezel" class="bezel">
   <ng-container *ngIf="showOverlay; else appContent">
     <div #crtScreen class="crt-screen" [class.power-off]="isOff">
+      <img src="./assets/images/bezel.png" alt="Bezel" class="bezel">
       <img src="./assets/images/scanlines.png" alt="Scanlines" class="scanlines">
       <p #intro class="crt-text"></p>
     </div>
   </ng-container>
 
   <ng-template #appContent>
-    <div class="components">
-      <app-projects></app-projects>
+    <div class="components" appCustomCursor>
+      <app-skills></app-skills>
     </div>
   </ng-template>
 </div>

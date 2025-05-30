@@ -1,14 +1,16 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import TypeIt from 'typeit';
+import {SkillsComponent} from './skills/skills.component';
 import {NgIf} from '@angular/common';
-import {ProjectsComponent} from './projects/projects.component';
+import {CustomCursorDirective} from './shared/custom-cursor.directive';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   imports: [
+    SkillsComponent,
     NgIf,
-    ProjectsComponent
+    CustomCursorDirective
   ],
   styleUrls: ['./app.component.scss']
 })
@@ -16,7 +18,8 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('intro', { static: false }) intro!: ElementRef<HTMLElement>;
   @ViewChild('crtScreen', { static: false }) crtScreen!: ElementRef<HTMLDivElement>;
 
-  showOverlay = true;
+  // Return "showOverlay" to true when want animation to show
+  showOverlay = false;
   isOff = false;
 
   async ngAfterViewInit() {
