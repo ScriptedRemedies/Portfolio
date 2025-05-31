@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap');
 
 // * VARIABLES *
 
@@ -10,13 +10,7 @@ $padding: 100px;
 // FONTS & TEXT
 // PC Terminal
 $terminal: 'VT323', monospace;
-
-// Getting rid of all margins to make background images flushed with page, set all font to Inter, set entire background to cream
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background-color: #000;
-}
+$newTerminal: 'IBM Plex Mono', monospace;
 
 // Turning text responsive
 @mixin fluid-type($min-size, $max-size, $min-vw: 320px, $max-vw: 1200px) {
@@ -37,9 +31,41 @@ body {
 
 // Variable for text headings
 @mixin text-heading {
-  @include fluid-type(2rem, 3.5rem);
+  @include fluid-type(2.5rem, 3rem);
 }
 
 @mixin text-body {
   @include fluid-type(1rem, 1.5rem);
+}
+
+// Getting rid of all margins to make background images flushed with page, set all font to Inter, set entire background to cream
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #000;
+}
+
+h2 {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-family: $newTerminal;
+  @include text-heading;
+  font-weight: 200;
+}
+
+.spy-sentinel {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1px;   /* tiny trigger line */
+  pointer-events: none;
+  opacity: 0;
+}
+
+.container {
+  position: relative;
 }

@@ -1,8 +1,11 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import {Component, AfterViewInit, ViewChild, ElementRef, HostListener} from '@angular/core';
 import TypeIt from 'typeit';
 import {SkillsComponent} from './skills/skills.component';
 import {NgIf} from '@angular/common';
 import {CustomCursorDirective} from './shared/custom-cursor.directive';
+import {ProjectsComponent} from './projects/projects.component';
+import {HeaderComponent} from './header/header.component';
+import {HeaderService} from './shared/header.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +13,9 @@ import {CustomCursorDirective} from './shared/custom-cursor.directive';
   imports: [
     SkillsComponent,
     NgIf,
-    CustomCursorDirective
+    CustomCursorDirective,
+    ProjectsComponent,
+    HeaderComponent
   ],
   styleUrls: ['./app.component.scss']
 })
@@ -21,6 +26,11 @@ export class AppComponent implements AfterViewInit {
   // TODO: Return "showOverlay" to true when want animation to show
   showOverlay = true;
   isOff = false;
+
+  private sections: Array<{ el: HTMLElement; text: string }> = [];
+  private lastIndex = -1;
+
+  constructor(private headerService: HeaderService) {}
 
   async ngAfterViewInit() {
     // 1) Kick off JS flicker
@@ -56,6 +66,21 @@ export class AppComponent implements AfterViewInit {
     // 6) After collapse finishes, hide overlay → show real content
     await this.delay(1000);
     this.showOverlay = false;
+
+    await this.delay(0);
+
+    // Collect all the sections once the view is initialized
+    this.sections = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-header]')
+    ).map(el => ({
+      el,
+      text: el.dataset['header']!
+    }));
+
+    console.log('🍀 Collected sections:', this.sections.map(s => s.text));
+
+    // Trigger immediately on load
+    this.onScroll();
   }
 
   private startFlicker() {
@@ -71,5 +96,29 @@ export class AppComponent implements AfterViewInit {
 
   private delay(ms: number) {
     return new Promise<void>(res => setTimeout(res, ms));
+  }
+
+  @HostListener('window:scroll', [])
+  onScroll() {
+    const mid = window.innerHeight / 2;
+    let bestDist = Infinity;
+    let bestIndex = -1;
+
+    this.sections.forEach(({ el }, i) => {
+      const rect = el.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const dist = Math.abs(center - mid);
+      if (dist < bestDist) {
+        bestDist = dist;
+        bestIndex = i;
+      }
+    });
+
+    // only if the “winner” changed do we animate
+    if (bestIndex !== this.lastIndex) {
+      this.lastIndex = bestIndex;
+      const text = this.sections[bestIndex].text;
+      this.headerService.show(text);
+    }
   }
 }

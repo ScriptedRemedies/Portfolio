@@ -1,0 +1,23 @@
+@import '../../styles.scss';
+
+/* header.component.scss */
+.global-header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  color: white;
+  font-family: $newTerminal;
+  font-weight: 200;
+  z-index: 1000;
+
+  &::after {
+    content: '';
+  }
+  &.typing::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 0.1em;
+    animation: blink-cursor 1s infinite step-end;
+  }
+}
