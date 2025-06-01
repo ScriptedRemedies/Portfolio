@@ -98,7 +98,7 @@ export class AppComponent implements AfterViewInit {
     return new Promise<void>(res => setTimeout(res, ms));
   }
 
-  @HostListener('window:scroll', [])
+  //@HostListener('window:scroll', [])
   onScroll() {
     const mid = window.innerHeight / 2;
     let bestDist = Infinity;

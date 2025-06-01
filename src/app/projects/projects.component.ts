@@ -38,6 +38,15 @@ export class ProjectsComponent implements OnInit {
       linkText: 'View Web App',
       linkUrl: 'test',
       ratio: '1.65/1'
+    },
+    {
+      title: 'World Map',
+      imageUrl: 'assets/images/worldMap.png',
+      description:
+        'This world map retrieves information from the World Bank api as each country is hovered over.',
+      linkText: 'View Web App',
+      linkUrl: 'test',
+      ratio: '1.65/1'
     }
 
   ];

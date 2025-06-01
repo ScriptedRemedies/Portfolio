@@ -10,9 +10,13 @@
   <app-header></app-header>
 
   <ng-template #appContent>
-    <div class="components" appCustomCursor>
-      <app-skills></app-skills>
-      <app-projects></app-projects>
+    <div class="components" appCustomCursor (scroll)="onScroll()">
+      <div>
+        <app-skills></app-skills>
+      </div>
+      <div>
+        <app-projects></app-projects>
+      </div>
     </div>
   </ng-template>
 </div>
