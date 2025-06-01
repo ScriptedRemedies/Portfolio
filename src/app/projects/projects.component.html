@@ -1,0 +1,22 @@
+<div class="container" data-header="Projects">
+  <div class="projects-container">
+    <div class="project-box" *ngFor="let box of boxes">
+      <div class="img-container">
+        <img src="{{ box.imageUrl }}">
+      </div>
+
+      <div class="text-content" [ngStyle]="{ width: box.randomWidth }">
+        <div class="header-container">
+          <h3 class="box-header">{{ box.title }}</h3>
+        </div>
+
+        <div class="desc-container">
+          <p class="box-description">{{ box.description }}</p>
+          <a *ngIf="box.linkText && box.linkUrl" [href]="box.linkUrl" target="_blank" class="btn primary-btn">
+            {{ box.linkText }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

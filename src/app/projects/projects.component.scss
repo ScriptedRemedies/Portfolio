@@ -1,0 +1,98 @@
+@import '../../styles.scss';
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff;
+  align-items: center;
+  justify-content: end;
+
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .project-box {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 50px;
+    font-weight: 200;
+    margin-right: 50px;
+
+    &:hover {
+      .img-container {
+        img {
+          filter: grayscale(0%);
+          transform: scale(1.05);
+        }
+      }
+      .text-content {
+        p {
+          mask-position: 0% 0%;
+          -webkit-mask-position: 0% 0%;
+        }
+      }
+    }
+
+    .img-container {
+      max-width: 35vw;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        filter: grayscale(100%);
+        transition: 0.5s ease;
+      }
+    }
+
+    .text-content {
+      height: fit-content;
+      width: 50%;
+
+      h3 {
+        font-weight: 300;
+        text-transform: uppercase;
+        @include fluid-type(1rem, 1.6rem);
+      }
+
+      p {
+        @include fluid-type(0.7rem, 1rem);
+        mask-image: linear-gradient(
+            to left,
+            transparent 50%,
+            #000 50%
+        );
+        mask-size: 200% 100%;
+        /* Start fully shifted right, so the black region is entirely off-screen.
+           That means you see only “transparent,” so the <p> is 100% hidden. */
+        mask-position: 100% 0%;
+        -webkit-mask-image: linear-gradient(
+            to left,
+            transparent 50%,
+            #000 50%
+        );
+        -webkit-mask-size: 200% 100%;
+        -webkit-mask-position: 100% 0%;
+        opacity: 1;
+        transition: 0.5s linear;
+      }
+
+      .primary-btn {
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        top: 20px;
+        padding: 10px;
+        border: 0.5px solid #fff;
+        @include fluid-type(0.8rem, 1.4rem);
+      }
+    }
+  }
+}
