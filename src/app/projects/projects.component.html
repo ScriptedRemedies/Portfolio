@@ -1,11 +1,11 @@
 <div class="container" data-header="Projects">
   <div class="projects-container">
-    <div class="project-box" *ngFor="let box of boxes">
+    <div class="project-box" *ngFor="let box of boxes" [ngStyle]="{ width: box.randomWidth }">
       <div class="img-container">
         <img src="{{ box.imageUrl }}">
       </div>
 
-      <div class="text-content" [ngStyle]="{ width: box.randomWidth }">
+      <div class="text-content">
         <div class="header-container">
           <h3 class="box-header">{{ box.title }}</h3>
         </div>

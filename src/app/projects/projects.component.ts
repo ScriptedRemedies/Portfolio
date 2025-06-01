@@ -41,8 +41,12 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit() {
     this.boxes.forEach((box) => {
-      const pct = (Math.random() * 25 + 25).toFixed(2);
-      box.randomWidth = `${pct}%`;
-    })
+      // Pick a random value between 40 and 80:
+      const min = 60;
+      const max = 80;
+      const vw = Math.random() * (max - min) + min;
+      box.randomWidth = `${vw.toFixed(2)}vw`;
+    });
+
   }
 }
