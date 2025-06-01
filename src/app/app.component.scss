@@ -10,6 +10,10 @@
   transition: background-color 1s ease-in-out;
   cursor: none;
 
+  @media (max-width: 700px) {
+    height: 85vh;
+  }
+
   .crt-text {
     position: relative;
     padding-left: $padding;
@@ -19,6 +23,11 @@
     width: 50%;
     text-shadow: 1px 1px 2px rgb(150, 167, 124), 0 0 1em rgb(150, 167, 124), 0 0 0.2em rgb(150, 167, 124);
     z-index: 3;
+
+    @media (max-width: 700px) {
+      padding-left: 50px;
+      width: 70%;
+    }
   }
 }
 

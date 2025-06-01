@@ -3,13 +3,15 @@
 /* header.component.scss */
 .global-header {
   position: fixed;
-  top: 20px;
+  top: 0;
   left: 20px;
   margin: 0;
   color: white;
   font-family: $newTerminal;
   font-weight: 200;
   z-index: 1000;
+  background: #000;
+  width: 100vw;
 
   &::after {
     content: '';

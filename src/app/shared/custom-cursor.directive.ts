@@ -6,6 +6,7 @@ import { Directive, ElementRef, HostListener, OnInit, Renderer2 } from '@angular
 })
 export class CustomCursorDirective implements OnInit {
   private cursorEl!: HTMLElement;
+  private isTouch = false;
 
   constructor(
     private renderer: Renderer2,
@@ -13,6 +14,10 @@ export class CustomCursorDirective implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (this.isTouch) {
+      return;
+    }
     this.renderer.setStyle(this.host.nativeElement, 'cursor', 'none');
     this.cursorEl = this.renderer.createElement('div');
     this.renderer.addClass(this.cursorEl, 'custom-cursor');

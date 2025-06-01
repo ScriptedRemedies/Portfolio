@@ -8,6 +8,12 @@
   color: #fff;
   align-items: center;
   justify-content: end;
+  overflow-x: hidden;
+
+  @media (max-width: 700px) {
+    padding-bottom: 20px;
+    overflow-x: hidden;
+  }
 
   .projects-container {
     display: flex;
@@ -22,6 +28,18 @@
     gap: 50px;
     font-weight: 200;
     margin-right: 50px;
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+      margin: auto;
+      width: 100vw !important;
+      gap: 10px;
+
+      .img-container {
+        width: 80vw;
+        height: auto;
+      }
+    }
 
     &:hover {
       .img-container {
@@ -53,6 +71,10 @@
       height: fit-content;
       width: 50%;
 
+      @media (max-width: 700px) {
+        width: 90%;
+      }
+
       h3 {
         font-weight: 300;
         text-transform: uppercase;
@@ -60,7 +82,7 @@
       }
 
       p {
-        @include fluid-type(0.7rem, 1rem);
+        @include fluid-type(0.9rem, 1rem);
         mask-image: linear-gradient(
             to left,
             transparent 50%,
