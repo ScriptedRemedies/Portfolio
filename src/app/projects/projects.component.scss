@@ -40,12 +40,10 @@
 
     .img-container {
       flex: 0 0 35vw;
-      aspect-ratio: 4/3;
       overflow: hidden;
 
       img {
         width: 100%;
-        aspect-ratio: 4/3;
         filter: grayscale(100%);
         transition: 0.5s ease;
       }

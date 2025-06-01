@@ -1,8 +1,8 @@
 <div class="container" data-header="Projects">
   <div class="projects-container">
     <div class="project-box" *ngFor="let box of boxes" [ngStyle]="{ width: box.randomWidth }">
-      <div class="img-container">
-        <img src="{{ box.imageUrl }}">
+      <div class="img-container" [ngStyle]="{ aspectRatio: box.ratio }">
+        <img src="{{ box.imageUrl }}" [ngStyle]="{ aspectRatio: box.ratio }">
       </div>
 
       <div class="text-content">

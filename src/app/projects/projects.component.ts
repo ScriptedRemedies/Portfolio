@@ -8,6 +8,7 @@ interface ResourceBox {
   linkUrl?: string;
   imageUrl: string;
   randomWidth?: string;
+  ratio: string;
 }
 
 @Component({
@@ -26,7 +27,8 @@ export class ProjectsComponent implements OnInit {
       description:
         'Pantry Pal is a full-stack meal-planning app with an Angular frontend and Spring Boot backend that lets users add recipes, schedule them on a calendar, and automatically generate a consolidated shopping list.',
       linkText: 'View Web App',
-      linkUrl: 'https://pantrypalapp.net'
+      linkUrl: 'https://pantrypalapp.net',
+      ratio: '4/3'
     },
     {
       title: 'World Map',
@@ -34,7 +36,8 @@ export class ProjectsComponent implements OnInit {
       description:
       'This world map retrieves information from the World Bank api as each country is hovered over.',
       linkText: 'View Web App',
-      linkUrl: 'test'
+      linkUrl: 'test',
+      ratio: '1.65/1'
     }
 
   ];
