@@ -1,0 +1,13 @@
+<div class="container" data-header="About">
+  <div class="img-container" (click)="onTvClick()">
+    <!-- The “inner” content -->
+    <img [src]="innerSrc" alt="TV content" class="img"/>
+
+    <img src="/assets/images/oldTv.png" alt="" class="bezel">
+  </div>
+
+  <div class="text" [class.hidden]="!textVisible">
+    <h3>{{ currentScreen.heading }}</h3>
+    <p [innerHTML]="currentScreen.text"></p>
+  </div>
+</div>

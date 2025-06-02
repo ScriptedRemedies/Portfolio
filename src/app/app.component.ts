@@ -6,6 +6,7 @@ import {CustomCursorDirective} from './shared/custom-cursor.directive';
 import {ProjectsComponent} from './projects/projects.component';
 import {HeaderComponent} from './header/header.component';
 import {HeaderService} from './shared/header.service';
+import {AboutComponent} from './about/about.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import {HeaderService} from './shared/header.service';
     NgIf,
     CustomCursorDirective,
     ProjectsComponent,
-    HeaderComponent
+    HeaderComponent,
+    AboutComponent
   ],
   styleUrls: ['./app.component.scss']
 })
@@ -24,7 +26,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('crtScreen', { static: false }) crtScreen!: ElementRef<HTMLDivElement>;
 
   // TODO: Return "showOverlay" to true when want animation to show
-  showOverlay = true;
+  showOverlay = false;
   isOff = false;
 
   private sections: Array<{ el: HTMLElement; text: string }> = [];
