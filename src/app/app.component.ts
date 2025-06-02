@@ -7,6 +7,7 @@ import {ProjectsComponent} from './projects/projects.component';
 import {HeaderComponent} from './header/header.component';
 import {HeaderService} from './shared/header.service';
 import {AboutComponent} from './about/about.component';
+import {ContactComponent} from './contact/contact.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import {AboutComponent} from './about/about.component';
     CustomCursorDirective,
     ProjectsComponent,
     HeaderComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   styleUrls: ['./app.component.scss']
 })
@@ -26,7 +28,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('crtScreen', { static: false }) crtScreen!: ElementRef<HTMLDivElement>;
 
   // TODO: Return "showOverlay" to true when want animation to show
-  showOverlay = false;
+  showOverlay = true;
   isOff = false;
 
   private sections: Array<{ el: HTMLElement; text: string }> = [];

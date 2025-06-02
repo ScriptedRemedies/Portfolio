@@ -36,7 +36,7 @@ export class ProjectsComponent implements OnInit {
       description:
       'This world map retrieves information from the World Bank api as each country is hovered over.',
       linkText: 'View Web App',
-      linkUrl: 'test',
+      linkUrl: 'https://royalblue-goldfinch-209525.hostingersite.com',
       ratio: '1.65/1'
     }
   ];
