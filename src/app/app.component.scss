@@ -103,6 +103,27 @@
   transition: transform 0.08s ease-out;
   z-index: 10000;
 }
+.custom-cursor.hovered {
+  width: 90px;
+  height: 30px;
+  background-color: #1a1a1a;
+  border: 2px solid #39FF14;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #39FF14;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px #39FF14, 0 0 16px rgba(57,255,20,0.5);
+  pointer-events: none;
+  box-shadow: 0 0 10px #39FF14, inset 0 0 40px rgba(57,255,20,0.15);
+  background-image: repeating-linear-gradient(to bottom, rgba(57,255,20,0.05) 0%, rgba(0,0,0,0) 2%, rgba(57,255,20,0.05) 4%, rgba(0,0,0,0) 6%);
+  background-size: 100% 8px;
+  transition: transform 0.08s ease, background-color 0.15s ease;
+  z-index: 9999;
+}
 
 
 /* the little dot trail */

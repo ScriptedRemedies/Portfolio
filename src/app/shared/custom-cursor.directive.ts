@@ -38,5 +38,26 @@ export class CustomCursorDirective implements OnInit {
     this.renderer.setStyle(trail, 'top',  `${e.clientY}px`);
     setTimeout(() => this.renderer.removeChild(document.body, trail), 600);
   }
+
+  // 4. When the mouse enters any element with class="hover-target", add .hovered
+  @HostListener('document:mouseover', ['$event'])
+  onDocumentMouseOver(e: MouseEvent) {
+    const target = e.target as HTMLElement;
+    if (target.closest('.hover-target')) {
+      this.renderer.addClass(this.cursorEl, 'hovered');
+      this.cursorEl.innerText = 'CLICK';
+    }
+  }
+
+  // 5. When the mouse leaves any element with class="hover-target", remove .hovered
+  @HostListener('document:mouseout', ['$event'])
+  onDocumentMouseOut(e: MouseEvent) {
+    const target = e.target as HTMLElement;
+    // If the element you left is a hover-target (or inside it), remove hovered.
+    if (target.closest('.hover-target')) {
+      this.renderer.removeClass(this.cursorEl, 'hovered');
+      this.cursorEl.innerText = '';
+    }
+  }
 }
 
