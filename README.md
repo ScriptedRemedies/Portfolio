@@ -1,59 +1,34 @@
-# Portfolio
+# Sam Bushey Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+Welcome to my interactive developer portfolio — a custom-built experience showcasing my projects, skills, and creativity as a full-stack developer.
 
-## Development server
+## 🔍 Overview
 
-To start a local development server, run:
+This site was built as both a creative outlet and a technical showcase. It reflects my passion for clean code, thoughtful design, and immersive user experiences. From dynamic UI components to subtle animations and theme continuity, every piece of this site was handcrafted with care.
 
-```bash
-ng serve
-```
+Explore it live at 👉 [**scriptedremedies.com**](https://scriptedremedies.com)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Tech Stack
 
-## Code scaffolding
+- **Angular** – Component-based UI and routing
+- **TypeScript** – Strong typing and maintainability
+- **SCSS** – Custom styling with variables and nesting for theme control
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## ✨ Features
 
-```bash
-ng generate component component-name
-```
+- **CRT-Themed Interface** – Styled with a retro, analog TV aesthetic for a unique look and feel
+- **Animated Project Highlights** – Interactive elements to showcase projects with flair
+- **Terminal-Style Contact Panel** – Opens user's mail app with pre-filled subject line
+- **Custom Cursor System** – Responsive cursor feedback and hover-based text changes
+- **Responsive Design** – Fully functional across desktop and mobile devices
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## ⚠️ Disclaimer
 
-```bash
-ng generate --help
-```
+This project is a personal creation by **Sam Bushey**. All content, design, and code are original and may not be copied, redistributed, or reproduced without permission.
 
-## Building
+---
 
-To build the project run:
+📫 **Contact**  
+Feel free to connect or reach out:  
+[Email](mailto:Bushey.sam@gmail.com) | [GitHub](https://github.com/ScriptedRemedies) | [LinkedIn](https://linkedin.com/in/busheysam)
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
