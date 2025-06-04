@@ -30,5 +30,4 @@ This project is a personal creation by **Sam Bushey**. All content, design, and 
 
 📫 **Contact**  
 Feel free to connect or reach out:  
-[Email](mailto:Bushey.sam@gmail.com) | [GitHub](https://github.com/ScriptedRemedies) | [LinkedIn](https://linkedin.com/in/busheysam)
-
+[Portfolio](https://scriptedremedies.com) | [Email](mailto:Bushey.sam@gmail.com) | [GitHub](https://github.com/ScriptedRemedies) | [LinkedIn](https://linkedin.com/in/busheysam)
